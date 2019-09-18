@@ -1,0 +1,17 @@
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\SuSatisOtomasyonu.exe.config
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\SuSatisOtomasyonu.exe
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\SuSatisOtomasyonu.pdb
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csprojAssemblyReference.cache
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.UI.HomeForm.resources
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.Login.resources
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.Properties.Resources.resources
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csproj.GenerateResource.cache
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csproj.CoreCompileInputs.cache
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.exe
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.pdb
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\EntityFramework.dll
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\EntityFramework.xml
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csproj.CopyComplete
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.UI.UpdateForm.resources
