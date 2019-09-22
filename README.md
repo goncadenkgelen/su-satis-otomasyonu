@@ -6,7 +6,7 @@ C#, Entity Framework ve Winform ile geliştirilen bir su satış yönetim uygula
 
 ## Tablo (Entity) Yapısı
 
-![Image of Yaktocat](https://github.com/goncasilik/su-satis-otomasyonu/blob/master/veritabanı.png
+![Image of Yaktocat](https://github.com/goncasilik/su-satis-otomasyonu/blob/master/veritabanı.png)
 
 ## SQL Sorguları
 ```
