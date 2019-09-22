@@ -3,7 +3,6 @@ C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\SuSatisOtom
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\SuSatisOtomasyonu.pdb
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csprojAssemblyReference.cache
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.UI.HomeForm.resources
-C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.Login.resources
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.Properties.Resources.resources
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csproj.GenerateResource.cache
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csproj.CoreCompileInputs.cache
@@ -16,3 +15,4 @@ C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\EntityFrame
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csproj.CopyComplete
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.UI.UpdateForm.resources
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.UI.AddOrderForm.resources
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.AddCustomerForm.resources

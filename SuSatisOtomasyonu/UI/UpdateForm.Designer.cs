@@ -143,7 +143,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UpdateForm";
-            this.Text = "UpdateForm";
+            this.Text = "Müşteri Güncelle";
             this.Load += new System.EventHandler(this.UpdateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

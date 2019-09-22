@@ -27,8 +27,8 @@ namespace SuSatisOtomasyonu.UI
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
+            AddCustomerForm addCustomerForm = new AddCustomerForm();
+            addCustomerForm.Show();
         }
 
         private void ListCustomers()
@@ -226,6 +226,7 @@ namespace SuSatisOtomasyonu.UI
 
             if (deleted)
             {
+                dataGridView2.Rows.Clear();
                 ListOrders();
             }
         }
