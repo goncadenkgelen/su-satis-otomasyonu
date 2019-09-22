@@ -59,7 +59,12 @@
       <DependentUpon>SuSatisModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CustomerHepler.cs" />
+    <Compile Include="DAL\OrderHelper.cs" />
     <Compile Include="Model\CustomerModel.cs" />
+    <Compile Include="Model\OrderModel.cs" />
+    <Compile Include="Ordering.cs">
+      <DependentUpon>SuSatisModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SuSatisModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,6 +79,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SuSatisModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddOrderForm.Designer.cs">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\HomeForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +106,9 @@
     <Compile Include="UI\UpdateForm.Designer.cs">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\AddOrderForm.resx">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,10 +149,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SuSatisModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SuSatisModel.Context.cs</LastGenOutput>
       <DependentUpon>SuSatisModel.edmx</DependentUpon>
+      <LastGenOutput>SuSatisModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="SuSatisModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -146,9 +163,5 @@
       <LastGenOutput>SuSatisModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

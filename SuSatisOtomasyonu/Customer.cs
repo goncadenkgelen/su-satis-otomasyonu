@@ -14,10 +14,19 @@ namespace SuSatisOtomasyonu
     
     public partial class Customer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Customer()
+        {
+            this.Ordering = new HashSet<Ordering>();
+        }
+    
         public int CustomerID { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string phoneNumber { get; set; }
         public string adress { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ordering> Ordering { get; set; }
     }
 }

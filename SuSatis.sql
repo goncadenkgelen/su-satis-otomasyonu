@@ -7,10 +7,10 @@ Create table Customer
 	adress nvarchar(MAX)
 )
 
-Create table Order
+Create table Ordering
 (
 	orderID int primary key identity,
-	customerID int not null foreign key references Customer(customerID),
+	CustomerID int not null foreign key references Customer(CustomerID),
 	status nvarchar(50),
 	price int
 )
@@ -18,8 +18,8 @@ Create table Order
 insert into Customer(firstName, lastName, phoneNumber, adress) values ('Gonca','Þilik', '5316129966', 'Kaðýthane')
 insert into Customer(firstName, lastName, phoneNumber, adress) values ('Erbil','Þilik', '5316960033', '4.Levent')
 
-insert into Order(customerID, status, price) values (1, 'Teslim Edildi', 15)
-insert into Order(customerID, status, price) values (2, 'Teslim Edildi', 10)
+insert into Ordering(customerID, status, price) values (1, 'Teslim Edildi', 15)
+insert into Ordering(customerID, status, price) values (2, 'Teslim Edildi', 10)
 
 
 

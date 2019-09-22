@@ -26,5 +26,6 @@ namespace SuSatisOtomasyonu
         }
     
         public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<Ordering> Ordering { get; set; }
     }
 }

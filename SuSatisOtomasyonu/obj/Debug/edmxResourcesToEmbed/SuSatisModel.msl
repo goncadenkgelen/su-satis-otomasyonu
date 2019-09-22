@@ -12,5 +12,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Ordering">
+      <EntityTypeMapping TypeName="SuSatisModel.Ordering">
+        <MappingFragment StoreEntitySet="Ordering">
+          <ScalarProperty Name="orderID" ColumnName="orderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
