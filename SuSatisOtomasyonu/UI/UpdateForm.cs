@@ -6,18 +6,19 @@ namespace SuSatisOtomasyonu.UI
 {
     public partial class UpdateForm : Form
     {
-        private readonly Customer customer;
+        private readonly Customers customer;
         private void Button1_Click(object sender, EventArgs e)
         {
-            Customer updatedCustomer = new Customer
+            Customers updatedCustomer = new Customers
             {
+                customerID = customer.customerID,
                 firstName = textBox1.Text,
                 lastName = textBox2.Text,
                 phoneNumber = maskedTextBox1.Text,
-                adress = textBox4.Text
+                address = textBox4.Text
             };
 
-            bool updated = CustomerHepler.UpdateCustomer(Convert.ToInt32(customer.CustomerID), updatedCustomer);
+            bool updated = CustomerHepler.UpdateCustomer(Convert.ToInt32(customer.customerID), updatedCustomer);
             if (updated)
             {
                 MessageBox.Show("Kayıt Guncellendi");
@@ -30,7 +31,7 @@ namespace SuSatisOtomasyonu.UI
             }
         }
 
-        public UpdateForm(Customer customer)
+        public UpdateForm(Customers customer)
         {
             this.customer = customer;
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace SuSatisOtomasyonu.UI
             textBox1.Text = customer.firstName;
             textBox2.Text = customer.lastName;
             maskedTextBox1.Text = customer.phoneNumber;
-            textBox4.Text = customer.adress;
+            textBox4.Text = customer.address;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuSatisOtomasyonu.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,41 @@ namespace SuSatisOtomasyonu.DAL
 {
     class CustomerHepler
     {
-        public static bool AddCustomer(Customer customer)
+        public static bool AddCustomer(Customers customer)
         {
             using (SuSatisEntities db = new SuSatisEntities())
             {
-                db.Customer.Add(customer);
+                customer.createdAt = DateTime.Now;
+                db.Customers.Add(customer);
+                db.SaveChanges();
+
+                return true;
+            }
+        }
+
+        public static List<Customers> GetCustomers(string searchQuery)
+        {
+            using (SuSatisEntities db = new SuSatisEntities())
+            {
+                return db.Customers
+                    .Where(c => c.firstName.Contains(searchQuery))
+                    .OrderByDescending(c => c.createdAt)
+                    .ToList();
+            }
+        }
+
+        public static bool UpdateCustomer(int customerID, Customers updatedCustomer)
+        {
+            using (SuSatisEntities db = new SuSatisEntities())
+            {
+                Customers customer = db.Customers
+                    .Where(c => c.customerID == customerID)
+                    .FirstOrDefault();
+
+                db.Customers.Remove(customer);
+
+                updatedCustomer.createdAt = DateTime.Now;
+                db.Customers.Add(updatedCustomer);
                 db.SaveChanges();
 
                 return true;
@@ -23,35 +54,35 @@ namespace SuSatisOtomasyonu.DAL
         {
             using (SuSatisEntities db = new SuSatisEntities())
             {
-                Customer customer = db.Customer.Where(s => s.CustomerID == customerID).FirstOrDefault();
-                db.Customer.Remove(customer);
+                Customers customer = db.Customers
+                    .Where(s => s.customerID == customerID)
+                    .FirstOrDefault();
+                db.Customers.Remove(customer);
                 db.SaveChanges();
 
                 return true;
             }
         }
 
-        public static List<Customer> ListCustomer(string searchQuery)
+        public static List<CustomerModel> MapCustomerEntity(List<Customers> customers)
         {
-            using (SuSatisEntities db = new SuSatisEntities())
+            List<CustomerModel> customersModels = new List<CustomerModel>();
+
+            foreach (var customer in customers)
             {
-                return db.Customer.Where(c => c.firstName.Contains(searchQuery))
-                             .ToList();
+                CustomerModel customerModel = new CustomerModel
+                {
+                    customerID = customer.customerID,
+                    firstName = customer.firstName,
+                    lastName = customer.lastName,
+                    phoneNumber = customer.phoneNumber,
+                    adress = customer.address
+                };
+
+                customersModels.Add(customerModel);
             }
-        }
 
-        public static bool UpdateCustomer(int customerID, Customer updatedCustomer)
-        {
-            using (SuSatisEntities db = new SuSatisEntities())
-            {
-                Customer customer = db.Customer.Where(c => c.CustomerID == customerID).FirstOrDefault();
-
-                db.Customer.Remove(customer);
-                db.Customer.Add(updatedCustomer);
-                db.SaveChanges();
-
-                return true;
-            }
+            return customersModels;
         }
     }
 }

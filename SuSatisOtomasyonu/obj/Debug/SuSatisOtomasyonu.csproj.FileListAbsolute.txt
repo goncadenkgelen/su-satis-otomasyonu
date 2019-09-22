@@ -15,3 +15,4 @@ C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\EntityFrame
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.csproj.CopyComplete
 C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.UI.UpdateForm.resources
+C:\Users\Gonca\Desktop\SuSatisOtomasyonu\SuSatisOtomasyonu\obj\Debug\SuSatisOtomasyonu.UI.AddOrderForm.resources

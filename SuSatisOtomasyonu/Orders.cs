@@ -12,12 +12,14 @@ namespace SuSatisOtomasyonu
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Orders
     {
-        public int CustomerID { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string phoneNumber { get; set; }
-        public string adress { get; set; }
+        public int orderID { get; set; }
+        public int customerID { get; set; }
+        public string status { get; set; }
+        public int price { get; set; }
+        public System.DateTime createdAt { get; set; }
+    
+        public virtual Customers Customers { get; set; }
     }
 }

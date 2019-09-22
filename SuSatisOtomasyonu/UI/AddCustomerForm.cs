@@ -20,12 +20,12 @@ namespace SuSatisOtomasyonu
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Customer newCustomer = new Customer
+            Customers newCustomer = new Customers
             {
                 firstName = textBox1.Text,
                 lastName = textBox2.Text,
                 phoneNumber = maskedTextBox1.Text,
-                adress = textBox4.Text
+                address = textBox4.Text
             };
             bool success = CustomerHepler.AddCustomer(newCustomer);
             if (success)
@@ -38,6 +38,11 @@ namespace SuSatisOtomasyonu
             {
                 MessageBox.Show("Kayıt Başarısız!!!");
             }
-        }    
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

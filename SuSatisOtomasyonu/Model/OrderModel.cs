@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace SuSatisOtomasyonu.Model
 {
-    class CustomerModel
+    class OrderModel
     {
+        public int orderID { get; set; }
         public int customerID { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string phoneNumber { get; set; }
-        public string adress { get; set; }
+        public string status { get; set; }
+        public Nullable<int> price { get; set; }
+
+        public Customers Customer { get; set; }
     }
 }
