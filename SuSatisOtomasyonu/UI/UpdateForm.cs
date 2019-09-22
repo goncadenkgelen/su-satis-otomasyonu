@@ -11,6 +11,7 @@ namespace SuSatisOtomasyonu.UI
         {
             Customer updatedCustomer = new Customer
             {
+                CustomerID = customer.CustomerID,
                 firstName = textBox1.Text,
                 lastName = textBox2.Text,
                 phoneNumber = maskedTextBox1.Text,

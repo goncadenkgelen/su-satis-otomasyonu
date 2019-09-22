@@ -38,6 +38,11 @@ namespace SuSatisOtomasyonu
             {
                 MessageBox.Show("Kayıt Başarısız!!!");
             }
-        }    
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
