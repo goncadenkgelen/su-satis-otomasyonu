@@ -165,7 +165,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddOrderForm";
-            this.Text = "AddOrderForm";
+            this.Text = "Sipariş Ekle";
             this.Load += new System.EventHandler(this.AddOrderForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

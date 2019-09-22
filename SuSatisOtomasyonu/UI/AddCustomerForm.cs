@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SuSatisOtomasyonu
 {
-    public partial class Login : Form
+    public partial class AddCustomerForm : Form
     {
-        public Login()
+        public AddCustomerForm()
         {
             InitializeComponent();
         }
@@ -38,11 +38,6 @@ namespace SuSatisOtomasyonu
             {
                 MessageBox.Show("Kayıt Başarısız!!!");
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

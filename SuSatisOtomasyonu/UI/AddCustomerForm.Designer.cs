@@ -1,6 +1,6 @@
 ﻿namespace SuSatisOtomasyonu
 {
-    partial class Login
+    partial class AddCustomerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomerForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -127,7 +127,7 @@
             this.maskedTextBox1.Size = new System.Drawing.Size(172, 22);
             this.maskedTextBox1.TabIndex = 9;
             // 
-            // Login
+            // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,9 +142,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Login";
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.Name = "AddCustomerForm";
+            this.Text = "Müşteri Ekle";
             this.ResumeLayout(false);
             this.PerformLayout();
 

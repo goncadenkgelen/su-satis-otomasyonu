@@ -165,7 +165,7 @@
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox3.Location = new System.Drawing.Point(20, 161);
+            this.groupBox3.Location = new System.Drawing.Point(20, 153);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -360,7 +360,7 @@
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.Name = "HomeForm";
-            this.Text = "HomeForm";
+            this.Text = "Anasayfa";
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
