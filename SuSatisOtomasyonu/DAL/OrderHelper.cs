@@ -9,22 +9,47 @@ namespace SuSatisOtomasyonu.DAL
 {
     class OrderHelper
     {
-        public static bool AddOrder(Ordering order)
+        public static bool AddOrder(Orders order)
         {
             using (SuSatisEntities db = new SuSatisEntities())
             {
-                db.Ordering.Add(order);
+                order.createdAt = DateTime.Now;
+
+                db.Orders.Add(order);
                 db.SaveChanges();
 
                 return true;
             }
         }
 
-        public static List<Ordering> GetOrders()
+        public static List<Orders> GetOrders()
         {
             using (SuSatisEntities db = new SuSatisEntities())
             {
-                List<Ordering> orders = db.Ordering.Include("Customer").ToList();
+                List<Orders> orders = db.Orders
+                    .Include("Customers")
+                    .OrderByDescending(o => o.createdAt)
+                    .ToList();
+
+                return orders;
+            }
+        }
+
+        public static List<Orders> GetTodaysOrders()
+        {
+            using (SuSatisEntities db = new SuSatisEntities())
+            {
+                DateTime today = DateTime.Now;
+
+                List<Orders> orders = db.Orders
+                    .Include("Customers")
+                    .OrderByDescending(o => o.createdAt)
+                    .Where(o => (
+                        o.createdAt.Year == today.Year &&
+                        o.createdAt.Month == today.Month &&
+                        o.createdAt.Day == today.Day
+                    ))
+                    .ToList();
 
                 return orders;
             }
@@ -34,9 +59,10 @@ namespace SuSatisOtomasyonu.DAL
         {
             using (SuSatisEntities db = new SuSatisEntities())
             {
-                Ordering order = db.Ordering.Where(o => o.orderID == orderId).FirstOrDefault();
+                Orders order = db.Orders.Where(o => o.orderID == orderId).FirstOrDefault();
 
                 order.status = orderStatus;
+                order.createdAt = DateTime.Now;
 
                 db.SaveChanges();
 
@@ -48,18 +74,32 @@ namespace SuSatisOtomasyonu.DAL
         {
             using (SuSatisEntities db = new SuSatisEntities())
             {
-                Ordering order = db.Ordering
+                Orders order = db.Orders
                     .Where(s => s.orderID == orderId)
                     .FirstOrDefault();
 
-                db.Ordering.Remove(order);
+                db.Orders.Remove(order);
                 db.SaveChanges();
 
                 return true;
             }
         }
 
-        public static List<OrderModel> MapOrderEntity(List<Ordering> orders)
+        public static bool DeleteAllOrders()
+        {
+            using (SuSatisEntities db = new SuSatisEntities())
+            {
+                List<Orders> orders = GetOrders();
+
+                db.Orders.RemoveRange(db.Orders);
+
+                db.SaveChanges();
+
+                return true;
+            }
+        }
+
+        public static List<OrderModel> MapOrderEntity(List<Orders> orders)
         {
             List<OrderModel> ordersModel = new List<OrderModel>();
 
@@ -68,10 +108,10 @@ namespace SuSatisOtomasyonu.DAL
                 OrderModel orderModel = new OrderModel
                 {
                     orderID = order.orderID,
-                    CustomerID = order.CustomerID,
+                    customerID = order.customerID,
                     status = order.status,
                     price = order.price,
-                    Customer = order.Customer,
+                    Customer = order.Customers,
                 };
 
                 ordersModel.Add(orderModel);

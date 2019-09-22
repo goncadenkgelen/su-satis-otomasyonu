@@ -51,7 +51,7 @@ namespace SuSatisOtomasyonu.UI
                 for (int i = 0; i < customers.Count; i++)
                 {
                     i = dataGridView1.Rows.Add();
-                    dataGridView1.Rows[i].Cells[0].Value = customers[i].CustomerID;
+                    dataGridView1.Rows[i].Cells[0].Value = customers[i].customerID;
                     dataGridView1.Rows[i].Cells[1].Value = customers[i].firstName;
                     dataGridView1.Rows[i].Cells[2].Value = customers[i].lastName;
                     dataGridView1.Rows[i].Cells[3].Value = customers[i].phoneNumber;
@@ -60,9 +60,9 @@ namespace SuSatisOtomasyonu.UI
             }
         }
 
-        private void ListOrders()
+        private void FillOrderDataGrid(List<Orders> orderList)
         {
-            List<OrderModel> orders = OrderHelper.MapOrderEntity(OrderHelper.GetOrders());
+            List<OrderModel> orders = OrderHelper.MapOrderEntity(orderList);
 
             if (orders.Count > 0)
             {
@@ -84,10 +84,10 @@ namespace SuSatisOtomasyonu.UI
                     dataGridView2.Rows[i].Cells[1].Value = orders[i].Customer.firstName;
                     dataGridView2.Rows[i].Cells[2].Value = orders[i].Customer.lastName;
                     dataGridView2.Rows[i].Cells[3].Value = orders[i].Customer.phoneNumber;
-                    dataGridView2.Rows[i].Cells[4].Value = orders[i].Customer.adress;
+                    dataGridView2.Rows[i].Cells[4].Value = orders[i].Customer.address;
                     dataGridView2.Rows[i].Cells[5].Value = orders[i].price;
 
-                    switch(orders[i].status)
+                    switch (orders[i].status)
                     {
                         case "processing":
                             dataGridView2.Rows[i].Cells[6].Value = "Sipariş Alındı";
@@ -105,6 +105,13 @@ namespace SuSatisOtomasyonu.UI
                     }
                 }
             }
+        }
+
+        private void ListOrders()
+        {
+            List<Orders> orders = OrderHelper.GetOrders();
+
+            FillOrderDataGrid(orders);
         }
 
         private void UpdateOrderStatus(string orderStatus)
@@ -133,13 +140,13 @@ namespace SuSatisOtomasyonu.UI
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            var customer = new Customer
+            var customer = new Customers
             {
-                CustomerID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value.ToString()),
+                customerID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value.ToString()),
                 firstName = dataGridView1.CurrentRow.Cells["Ad"].Value.ToString(),
                 lastName = dataGridView1.CurrentRow.Cells["Soyad"].Value.ToString(),
                 phoneNumber = dataGridView1.CurrentRow.Cells["Telefon"].Value.ToString(),
-                adress = dataGridView1.CurrentRow.Cells["Adres"].Value.ToString()
+                address = dataGridView1.CurrentRow.Cells["Adres"].Value.ToString()
             };
             UpdateForm updateForm = new UpdateForm(customer);
             updateForm.Show();
@@ -158,15 +165,15 @@ namespace SuSatisOtomasyonu.UI
         private void Button8_Click(object sender, EventArgs e)
         {
 
-            var customer = new Customer
+            var customer = new Customers
             {
-                CustomerID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value.ToString()),
+                customerID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value.ToString()),
                 firstName = dataGridView1.CurrentRow.Cells["Ad"].Value.ToString(),
                 lastName = dataGridView1.CurrentRow.Cells["Soyad"].Value.ToString(),
                 phoneNumber = dataGridView1.CurrentRow.Cells["Telefon"].Value.ToString(),
-                adress = dataGridView1.CurrentRow.Cells["Adres"].Value.ToString()
+                address = dataGridView1.CurrentRow.Cells["Adres"].Value.ToString()
             };
-            
+
             AddOrderForm addOrderForm = new AddOrderForm(customer);
             addOrderForm.Show();
         }
@@ -205,6 +212,21 @@ namespace SuSatisOtomasyonu.UI
             else
             {
                 MessageBox.Show("Sipariş Silinemedi");
+            }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            FillOrderDataGrid(OrderHelper.GetTodaysOrders());
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            bool deleted = OrderHelper.DeleteAllOrders();
+
+            if (deleted)
+            {
+                ListOrders();
             }
         }
     }

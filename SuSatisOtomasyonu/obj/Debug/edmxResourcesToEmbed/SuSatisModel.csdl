@@ -1,44 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SuSatisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Customer">
+  <EntityType Name="Customers">
     <Key>
-      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="customerID" />
     </Key>
-    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="phoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Ordering" Relationship="Self.FK_Ordering_Customer" FromRole="Customer" ToRole="Ordering" />
+    <Property Name="customerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__customer__534D60F1" FromRole="Customers" ToRole="Orders" />
   </EntityType>
-  <EntityType Name="Ordering">
+  <EntityType Name="Orders">
     <Key>
       <PropertyRef Name="orderID" />
     </Key>
     <Property Name="orderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CustomerID" Type="Int32" Nullable="false" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="price" Type="Int32" />
-    <NavigationProperty Name="Customer" Relationship="Self.FK_Ordering_Customer" FromRole="Ordering" ToRole="Customer" />
+    <Property Name="customerID" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Int32" Nullable="false" />
+    <Property Name="createdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK__Orders__customer__534D60F1" FromRole="Orders" ToRole="Customers" />
   </EntityType>
-  <Association Name="FK_Ordering_Customer">
-    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
-    <End Role="Ordering" Type="Self.Ordering" Multiplicity="*" />
+  <Association Name="FK__Orders__customer__534D60F1">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Customer">
-        <PropertyRef Name="CustomerID" />
+      <Principal Role="Customers">
+        <PropertyRef Name="customerID" />
       </Principal>
-      <Dependent Role="Ordering">
-        <PropertyRef Name="CustomerID" />
+      <Dependent Role="Orders">
+        <PropertyRef Name="customerID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="SuSatisEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Customer" EntityType="Self.Customer" />
-    <EntitySet Name="Ordering" EntityType="Self.Ordering" />
-    <AssociationSet Name="FK_Ordering_Customer" Association="Self.FK_Ordering_Customer">
-      <End Role="Customer" EntitySet="Customer" />
-      <End Role="Ordering" EntitySet="Ordering" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <AssociationSet Name="FK__Orders__customer__534D60F1" Association="Self.FK__Orders__customer__534D60F1">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

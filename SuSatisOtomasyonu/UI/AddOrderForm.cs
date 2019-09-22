@@ -13,8 +13,8 @@ namespace SuSatisOtomasyonu.UI
 {
     public partial class AddOrderForm : Form
     {
-        private readonly Customer customer;
-        public AddOrderForm(Customer customer)
+        private readonly Customers customer;
+        public AddOrderForm(Customers customer)
         {
             this.customer = customer;
             InitializeComponent();
@@ -25,17 +25,16 @@ namespace SuSatisOtomasyonu.UI
             textBox1.Text = customer.firstName ;
             textBox2.Text = customer.lastName;
             maskedTextBox1.Text = customer.phoneNumber;
-            textBox3.Text = customer.adress;
+            textBox3.Text = customer.address;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Ordering newOrder = new Ordering
+            Orders newOrder = new Orders
             {
                 price = Convert.ToInt32(textBox4.Text),
                 status = OrderStatus.processing.ToString(),
-                Customer = this.customer,
-
+                customerID = this.customer.customerID,
             };
 
             bool success = OrderHelper.AddOrder(newOrder);

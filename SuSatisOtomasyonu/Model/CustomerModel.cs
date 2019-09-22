@@ -8,7 +8,7 @@ namespace SuSatisOtomasyonu.Model
 {
     class CustomerModel
     {
-        public int CustomerID { get; set; }
+        public int customerID { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string phoneNumber { get; set; }

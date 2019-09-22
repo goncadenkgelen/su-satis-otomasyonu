@@ -25,7 +25,7 @@ namespace SuSatisOtomasyonu
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<Ordering> Ordering { get; set; }
+        public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
     }
 }

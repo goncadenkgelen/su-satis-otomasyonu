@@ -55,14 +55,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer.cs">
+    <Compile Include="Customers.cs">
       <DependentUpon>SuSatisModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\CustomerHepler.cs" />
     <Compile Include="DAL\OrderHelper.cs" />
     <Compile Include="Model\CustomerModel.cs" />
     <Compile Include="Model\OrderModel.cs" />
-    <Compile Include="Ordering.cs">
+    <Compile Include="Orders.cs">
       <DependentUpon>SuSatisModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SuSatisModel.Context.cs">

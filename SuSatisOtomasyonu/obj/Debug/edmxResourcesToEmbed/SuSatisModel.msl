@@ -1,24 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SuSatisModelStoreContainer" CdmEntityContainer="SuSatisEntities">
-    <EntitySetMapping Name="Customer">
-      <EntityTypeMapping TypeName="SuSatisModel.Customer">
-        <MappingFragment StoreEntitySet="Customer">
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="SuSatisModel.Customers">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
           <ScalarProperty Name="firstName" ColumnName="firstName" />
           <ScalarProperty Name="lastName" ColumnName="lastName" />
           <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
-          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Ordering">
-      <EntityTypeMapping TypeName="SuSatisModel.Ordering">
-        <MappingFragment StoreEntitySet="Ordering">
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="SuSatisModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
           <ScalarProperty Name="orderID" ColumnName="orderID" />
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
